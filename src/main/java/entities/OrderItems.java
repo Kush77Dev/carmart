@@ -44,13 +44,13 @@ public class OrderItems implements Serializable {
     @Column(name = "carpic")
     private String carpic;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "itemID")
-    private Collection<Order1> order1Collection;
+    private Collection<CarOrder> carOrderCollection;
     @JoinColumn(name = "carid", referencedColumnName = "id")
     @ManyToOne
     private Cars carid;
     @JoinColumn(name = "order_id", referencedColumnName = "id")
     @ManyToOne
-    private Order1 orderId;
+    private CarOrder orderId;
 
     public OrderItems() {
     }
@@ -83,12 +83,12 @@ public class OrderItems implements Serializable {
         this.carpic = carpic;
     }
 
-    public Collection<Order1> getOrder1Collection() {
-        return order1Collection;
+    public Collection<CarOrder> getCarOrderCollection() {
+        return carOrderCollection;
     }
 
-    public void setOrder1Collection(Collection<Order1> order1Collection) {
-        this.order1Collection = order1Collection;
+    public void setCarOrderCollection(Collection<CarOrder> carOrderCollection) {
+        this.carOrderCollection = carOrderCollection;
     }
 
     public Cars getCarid() {
@@ -99,11 +99,11 @@ public class OrderItems implements Serializable {
         this.carid = carid;
     }
 
-    public Order1 getOrderId() {
+    public CarOrder getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Order1 orderId) {
+    public void setOrderId(CarOrder orderId) {
         this.orderId = orderId;
     }
 

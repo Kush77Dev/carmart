@@ -52,7 +52,7 @@ public class Payment implements Serializable {
     private String paymentMethod;
     @JoinColumn(name = "orderID", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private Order1 orderID;
+    private CarOrder orderID;
 
     public Payment() {
     }
@@ -100,11 +100,11 @@ public class Payment implements Serializable {
         this.paymentMethod = paymentMethod;
     }
 
-    public Order1 getOrderID() {
+    public CarOrder getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(Order1 orderID) {
+    public void setOrderID(CarOrder orderID) {
         this.orderID = orderID;
     }
 

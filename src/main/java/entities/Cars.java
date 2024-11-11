@@ -81,9 +81,6 @@ public class Cars implements Serializable {
     @Basic(optional = false)
     @Column(name = "inStock")
     private boolean inStock;
-    @JoinColumn(name = "reviewID", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Review reviewID;
     @JoinColumn(name = "dealerID", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Dealer dealerID;
@@ -94,7 +91,7 @@ public class Cars implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "carID")
     private Collection<Inventory> inventoryCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "carID")
-    private Collection<Order1> order1Collection;
+    private Collection<CarOrder> carOrderCollection;
     @OneToMany(mappedBy = "carid")
     private Collection<OrderItems> orderItemsCollection;
 
@@ -216,14 +213,6 @@ public class Cars implements Serializable {
         this.inStock = inStock;
     }
 
-    public Review getReviewID() {
-        return reviewID;
-    }
-
-    public void setReviewID(Review reviewID) {
-        this.reviewID = reviewID;
-    }
-
     public Dealer getDealerID() {
         return dealerID;
     }
@@ -256,12 +245,12 @@ public class Cars implements Serializable {
         this.inventoryCollection = inventoryCollection;
     }
 
-    public Collection<Order1> getOrder1Collection() {
-        return order1Collection;
+    public Collection<CarOrder> getCarOrderCollection() {
+        return carOrderCollection;
     }
 
-    public void setOrder1Collection(Collection<Order1> order1Collection) {
-        this.order1Collection = order1Collection;
+    public void setCarOrderCollection(Collection<CarOrder> carOrderCollection) {
+        this.carOrderCollection = carOrderCollection;
     }
 
     public Collection<OrderItems> getOrderItemsCollection() {

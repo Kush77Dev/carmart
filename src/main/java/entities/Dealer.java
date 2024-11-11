@@ -11,8 +11,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
@@ -34,10 +32,6 @@ import java.util.Collection;
     @NamedQuery(name = "Dealer.findByPhonenumber", query = "SELECT d FROM Dealer d WHERE d.phonenumber = :phonenumber"),
     @NamedQuery(name = "Dealer.findByEmail", query = "SELECT d FROM Dealer d WHERE d.email = :email")})
 public class Dealer implements Serializable {
-
-//    @JoinColumn(name = "role_id", referencedColumnName = "role_id")
-    @ManyToOne(optional = false)
-//    private Role roleId;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -163,6 +157,9 @@ public class Dealer implements Serializable {
         return true;
     }
 
-  
+    @Override
+    public String toString() {
+        return "entities.Dealer[ id=" + id + " ]";
+    }
     
 }

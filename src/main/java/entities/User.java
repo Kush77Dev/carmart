@@ -14,7 +14,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.util.Collection;
@@ -60,14 +59,12 @@ public class User implements Serializable {
     @Basic(optional = false)
     @Column(name = "role_id")
     private int roleId;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
-//    private Role role;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userID")
     private Collection<Review> reviewCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userID")
     private Collection<Appointment> appointmentCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userID")
-    private Collection<Order1> order1Collection;
+    private Collection<CarOrder> carOrderCollection;
 
     public User() {
     }
@@ -83,7 +80,7 @@ public class User implements Serializable {
         this.password = password;
         this.adress = adress;
         this.phonenumber = phonenumber;
-//        this.roleId = roleId;
+        this.roleId = roleId;
     }
 
     public Integer getId() {
@@ -134,21 +131,13 @@ public class User implements Serializable {
         this.phonenumber = phonenumber;
     }
 
-//    public int getRoleId() {
-//        return roleId;
-//    }
-//
-//    public void setRoleId(int roleId) {
-//        this.roleId = roleId;
-//    }
-//
-//    public Role getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(Role role) {
-//        this.role = role;
-//    }
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
 
     public Collection<Review> getReviewCollection() {
         return reviewCollection;
@@ -166,12 +155,12 @@ public class User implements Serializable {
         this.appointmentCollection = appointmentCollection;
     }
 
-    public Collection<Order1> getOrder1Collection() {
-        return order1Collection;
+    public Collection<CarOrder> getCarOrderCollection() {
+        return carOrderCollection;
     }
 
-    public void setOrder1Collection(Collection<Order1> order1Collection) {
-        this.order1Collection = order1Collection;
+    public void setCarOrderCollection(Collection<CarOrder> carOrderCollection) {
+        this.carOrderCollection = carOrderCollection;
     }
 
     @Override

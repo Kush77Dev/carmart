@@ -5,7 +5,6 @@
 package entities;
 
 import jakarta.persistence.Basic;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,12 +14,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 
 /**
@@ -53,8 +50,6 @@ public class Review implements Serializable {
     @Column(name = "reviewDate")
     @Temporal(TemporalType.DATE)
     private Date reviewDate;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "reviewID")
-    private Collection<Cars> carsCollection;
     @JoinColumn(name = "carID", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Cars carID;
@@ -106,14 +101,6 @@ public class Review implements Serializable {
 
     public void setReviewDate(Date reviewDate) {
         this.reviewDate = reviewDate;
-    }
-
-    public Collection<Cars> getCarsCollection() {
-        return carsCollection;
-    }
-
-    public void setCarsCollection(Collection<Cars> carsCollection) {
-        this.carsCollection = carsCollection;
     }
 
     public Cars getCarID() {

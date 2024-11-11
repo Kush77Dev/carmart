@@ -28,19 +28,19 @@ import java.util.Date;
  * @author Kush Khakhiwala
  */
 @Entity
-@Table(name = "order")
+@Table(name = "car_order")
 @NamedQueries({
-    @NamedQuery(name = "Order1.findAll", query = "SELECT o FROM Order1 o"),
-    @NamedQuery(name = "Order1.findById", query = "SELECT o FROM Order1 o WHERE o.id = :id"),
-    @NamedQuery(name = "Order1.findByShippmentAddress", query = "SELECT o FROM Order1 o WHERE o.shippmentAddress = :shippmentAddress"),
-    @NamedQuery(name = "Order1.findByShippingPrice", query = "SELECT o FROM Order1 o WHERE o.shippingPrice = :shippingPrice"),
-    @NamedQuery(name = "Order1.findByTotalPrice", query = "SELECT o FROM Order1 o WHERE o.totalPrice = :totalPrice"),
-    @NamedQuery(name = "Order1.findByOrderDate", query = "SELECT o FROM Order1 o WHERE o.orderDate = :orderDate"),
-    @NamedQuery(name = "Order1.findByIsPaid", query = "SELECT o FROM Order1 o WHERE o.isPaid = :isPaid"),
-    @NamedQuery(name = "Order1.findByPaidAt", query = "SELECT o FROM Order1 o WHERE o.paidAt = :paidAt"),
-    @NamedQuery(name = "Order1.findByIsDelivered", query = "SELECT o FROM Order1 o WHERE o.isDelivered = :isDelivered"),
-    @NamedQuery(name = "Order1.findByDeliveredAt", query = "SELECT o FROM Order1 o WHERE o.deliveredAt = :deliveredAt")})
-public class Order1 implements Serializable {
+    @NamedQuery(name = "CarOrder.findAll", query = "SELECT c FROM CarOrder c"),
+    @NamedQuery(name = "CarOrder.findById", query = "SELECT c FROM CarOrder c WHERE c.id = :id"),
+    @NamedQuery(name = "CarOrder.findByShippmentAddress", query = "SELECT c FROM CarOrder c WHERE c.shippmentAddress = :shippmentAddress"),
+    @NamedQuery(name = "CarOrder.findByShippingPrice", query = "SELECT c FROM CarOrder c WHERE c.shippingPrice = :shippingPrice"),
+    @NamedQuery(name = "CarOrder.findByTotalPrice", query = "SELECT c FROM CarOrder c WHERE c.totalPrice = :totalPrice"),
+    @NamedQuery(name = "CarOrder.findByOrderDate", query = "SELECT c FROM CarOrder c WHERE c.orderDate = :orderDate"),
+    @NamedQuery(name = "CarOrder.findByIsPaid", query = "SELECT c FROM CarOrder c WHERE c.isPaid = :isPaid"),
+    @NamedQuery(name = "CarOrder.findByPaidAt", query = "SELECT c FROM CarOrder c WHERE c.paidAt = :paidAt"),
+    @NamedQuery(name = "CarOrder.findByIsDelivered", query = "SELECT c FROM CarOrder c WHERE c.isDelivered = :isDelivered"),
+    @NamedQuery(name = "CarOrder.findByDeliveredAt", query = "SELECT c FROM CarOrder c WHERE c.deliveredAt = :deliveredAt")})
+public class CarOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -88,14 +88,14 @@ public class Order1 implements Serializable {
     @OneToMany(mappedBy = "orderId")
     private Collection<OrderItems> orderItemsCollection;
 
-    public Order1() {
+    public CarOrder() {
     }
 
-    public Order1(Integer id) {
+    public CarOrder(Integer id) {
         this.id = id;
     }
 
-    public Order1(Integer id, String shippmentAddress, int shippingPrice, int totalPrice, Date orderDate, boolean isPaid, Date paidAt, boolean isDelivered, String deliveredAt) {
+    public CarOrder(Integer id, String shippmentAddress, int shippingPrice, int totalPrice, Date orderDate, boolean isPaid, Date paidAt, boolean isDelivered, String deliveredAt) {
         this.id = id;
         this.shippmentAddress = shippmentAddress;
         this.shippingPrice = shippingPrice;
@@ -229,10 +229,10 @@ public class Order1 implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Order1)) {
+        if (!(object instanceof CarOrder)) {
             return false;
         }
-        Order1 other = (Order1) object;
+        CarOrder other = (CarOrder) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -241,7 +241,7 @@ public class Order1 implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Order1[ id=" + id + " ]";
+        return "entities.CarOrder[ id=" + id + " ]";
     }
     
 }

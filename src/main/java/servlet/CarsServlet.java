@@ -4,7 +4,8 @@
  */
 package servlet;
 
-import ejb.adminLocal;
+import ejb.DealerBeanLocal;
+import entities.Cars;
 import entities.Dealer;
 import jakarta.ejb.EJB;
 import java.io.IOException;
@@ -20,11 +21,11 @@ import java.util.Collection;
  *
  * @author Kush Khakhiwala
  */
-@WebServlet(name = "dealerServlet", urlPatterns = {"/dealerServlet"})
-public class dealerServlet extends HttpServlet {
-
+@WebServlet(name = "CarsServlet", urlPatterns = {"/CarsServlet"})
+public class CarsServlet extends HttpServlet {
+    
     @EJB
-    adminLocal adminbean;
+    DealerBeanLocal dealerBean;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,40 +44,28 @@ public class dealerServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet dealerServlet</title>");
+            out.println("<title>Servlet CarsServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet dealerServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CarsServlet at " + request.getContextPath() + "</h1>");
 
-            adminbean.addDealer("Hari", "Chinnar", "Rand", "Majura ni rand");
+//          dealerBean.addCar("seltos", "img.jpg", "KIA", "SUV", "nice", 1500000, "zxi", 12, "white", 125, 25, true);
+//          dealerBean.addCar("swift", "img", "suzuki", "hatchback", "nice", 5000, "zxi", 17, "red", 123, 25, true);
+//          dealerBean.updateCar(1, "Baleno", "img", "suzuki", "hatchback", "nice", 5000, "zxi", 17, "red", 123, 25, true);
+           dealerBean.removeCar(1);
+           
+           
+            Cars c = dealerBean.getCarByName("seltos");
 
-//            adminbean.updateDealer(1, "Hari", "Chinnar", "Rand", "Majura ni rand");
-//            adminbean.removeDealer(1);
-            Collection<Dealer> deal = adminbean.getallDealers();
-
-            for (Dealer d : deal) {
-
-//                out.println("<br/> Cust id :" + d.getId() + " Name : " + d.getName() + " " + d.getPhonenumber());
-                out.println("Name:" + d.getName());
-                out.println("</br>");
-                out.println("Address:" + d.getAdress());
-                out.println("</br>");
-                out.println("Phone Number:" + d.getPhonenumber());
-                out.println("</br>");
-                out.println("Email:" + d.getEmail());
-                out.println("</br>");
-            }
-
-            Dealer d = adminbean.getallDealersbyId(20);
-
-            out.println("Name:" + d.getName());
+            out.println("Name:" + c.getName());
             out.println("</br>");
-            out.println("Address:" + d.getAdress());
-            out.println("</br>");
-            out.println("Phone Number:" + d.getPhonenumber());
-            out.println("</br>");
-            out.println("Email:" + d.getEmail());
-            out.println("</br>");
+            
+//             Collection<Cars> car = dealerBean.getAllCars();
+//
+//            for (Cars c1 : car) {
+//                out.println("Name:" + c1.getName());
+//                out.println("</br>");
+//            }
             out.println("</body>");
             out.println("</html>");
         }

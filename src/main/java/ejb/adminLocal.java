@@ -23,14 +23,14 @@ public interface adminLocal {
 
     Collection<Dealer> getallDealers();
 
-    Collection<Dealer> getallDealersbyId(Integer id);
+    Dealer getallDealersbyId(Integer id);
 
-    Collection<Dealer> getallDealersbyName(String name);
+    Dealer getallDealersbyName(String name);
 
-    Collection<Dealer> getallDealersbyaddress(String adress);
+    Dealer getallDealersbyaddress(String adress);
 
-    Collection<Dealer> getallDealersbyPhoneNumber(String phonenumber);
+    Dealer getallDealersbyPhoneNumber(String phonenumber);
 
-    Collection<Dealer> getallDealersbyEmail(String email);
+    Dealer getallDealersbyEmail(String email);
 
 }
