@@ -28,9 +28,7 @@ import java.util.Collection;
 @Table(name = "order_items")
 @NamedQueries({
     @NamedQuery(name = "OrderItems.findAll", query = "SELECT o FROM OrderItems o"),
-    @NamedQuery(name = "OrderItems.findByItemId", query = "SELECT o FROM OrderItems o WHERE o.itemId = :itemId"),
-    @NamedQuery(name = "OrderItems.findByCarname", query = "SELECT o FROM OrderItems o WHERE o.carname = :carname"),
-    @NamedQuery(name = "OrderItems.findByCarpic", query = "SELECT o FROM OrderItems o WHERE o.carpic = :carpic")})
+    @NamedQuery(name = "OrderItems.findByItemId", query = "SELECT o FROM OrderItems o WHERE o.itemId = :itemId")})
 public class OrderItems implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -39,10 +37,6 @@ public class OrderItems implements Serializable {
     @Basic(optional = false)
     @Column(name = "item_id")
     private Integer itemId;
-    @Column(name = "carname")
-    private String carname;
-    @Column(name = "carpic")
-    private String carpic;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "itemID")
     private Collection<CarOrder> carOrderCollection;
     @JoinColumn(name = "carid", referencedColumnName = "id")
@@ -65,22 +59,6 @@ public class OrderItems implements Serializable {
 
     public void setItemId(Integer itemId) {
         this.itemId = itemId;
-    }
-
-    public String getCarname() {
-        return carname;
-    }
-
-    public void setCarname(String carname) {
-        this.carname = carname;
-    }
-
-    public String getCarpic() {
-        return carpic;
-    }
-
-    public void setCarpic(String carpic) {
-        this.carpic = carpic;
     }
 
     public Collection<CarOrder> getCarOrderCollection() {

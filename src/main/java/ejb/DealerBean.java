@@ -1,11 +1,15 @@
 package ejb;
 
+import entities.Appointment;
 import entities.Cars;
 import entities.Dealer;
+import entities.Inventory;
+import entities.User;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.util.Collection;
+import java.util.Date;
 
 /**
  *
@@ -171,5 +175,97 @@ public class DealerBean implements DealerBeanLocal {
                 .setParameter("name", name)
                 .getResultList();
         
+    }
+
+    @Override
+    public void addInventory(Integer carID, Integer dealerID, Integer quantity) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+         Dealer d=em.find(Dealer.class, dealerID);
+        Collection<Inventory> inventoryOfDealer=d.getInventoryCollection();
+        
+        Cars c=em.find(Cars.class, carID);
+        Collection<Inventory> inventoryOfCar=c.getInventoryCollection();
+        
+        Inventory i = new Inventory();
+        i.setCarID(c);
+        i.setDealerID(d);
+        i.setQuantity(quantity);
+        i.setDateAdded(new Date());
+        em.persist(i);
+        
+        inventoryOfDealer.add(i);
+        em.merge(i);
+        
+        inventoryOfCar.add(i);
+        em.merge(i);
+    }
+
+    @Override
+    public void updateInventory(Integer id, Integer carID, Integer dealerID, Integer quantity) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    
+         Cars car=em.find(Cars.class, carID);
+         
+         Dealer dealer = em.find(Dealer.class, dealerID);
+         
+         Inventory i = em.find(Inventory.class, id);
+         
+         i.setCarID(car);
+         i.setDealerID(dealer);
+         i.setQuantity(quantity);
+         i.setDateAdded(new Date());
+         
+         if (dealer != null) {
+            i.setDealerID(dealer); // Set the Dealer object
+        }
+         
+         if (car != null) {
+            i.setCarID(car); // Set the Dealer object
+        }
+         
+         
+         em.merge(i);
+         
+         
+    }
+
+    @Override
+    public void removeInventory(Integer id, Integer carID, Integer dealerID) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+        Inventory inventory = new Inventory();
+        
+        
+        Dealer dealer= em.find(Dealer.class, dealerID);
+        Cars car = em.find(Cars.class, carID);
+        
+        Collection<Inventory> inventoryofDealer = dealer.getInventoryCollection();
+        Collection<Inventory> inventoryofCar = car.getInventoryCollection();
+        
+        inventoryofCar.remove(car);
+        inventoryofDealer.remove(dealer);
+        
+        em.merge(car);
+        em.merge(dealer);
+        
+        em.remove(inventory);
+     
+    }
+
+    @Override
+    public Inventory inventorybyId(Integer id) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+        return em.find(Inventory.class, id);
+    }
+
+    @Override
+    public Collection<Inventory> getAllInventory() {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+         Collection<Inventory> car = em.createNamedQuery("Inventory.findAll").getResultList();
+         return car;
     }
 }

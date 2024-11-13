@@ -6,6 +6,7 @@ package ejb;
 
 import entities.Cars;
 import entities.Dealer;
+import entities.Inventory;
 import entities.Review;
 import jakarta.ejb.Local;
 import java.util.Collection;
@@ -48,5 +49,21 @@ public interface DealerBeanLocal {
     Collection<Cars> getCarsByDealerId(Integer dealerId);
     
     Collection<Cars> searchCarByName(String name);
+    
+    
+    // Inventory Methods
+    
+    void addInventory(Integer carID,Integer dealerID,Integer quantity);
+    
+    void updateInventory(Integer id,Integer carID,Integer dealerID,Integer quantity);
+    
+    void removeInventory(Integer id,Integer carID,Integer dealerID);
+    
+    Inventory inventorybyId(Integer id);
+    
+    Collection<Inventory> getAllInventory();
+    
+    
+    
 
 }

@@ -30,7 +30,6 @@ import java.util.Date;
     @NamedQuery(name = "Appointment.findAll", query = "SELECT a FROM Appointment a"),
     @NamedQuery(name = "Appointment.findById", query = "SELECT a FROM Appointment a WHERE a.id = :id"),
     @NamedQuery(name = "Appointment.findByAppointmentDate", query = "SELECT a FROM Appointment a WHERE a.appointmentDate = :appointmentDate"),
-    @NamedQuery(name = "Appointment.findByAppointmentTime", query = "SELECT a FROM Appointment a WHERE a.appointmentTime = :appointmentTime"),
     @NamedQuery(name = "Appointment.findByStatus", query = "SELECT a FROM Appointment a WHERE a.status = :status")})
 public class Appointment implements Serializable {
 
@@ -44,11 +43,6 @@ public class Appointment implements Serializable {
     @Column(name = "appointmentDate")
     @Temporal(TemporalType.DATE)
     private Date appointmentDate;
-    @Basic(optional = false)
-    @Column(name = "appointmentTime")
-    @Temporal(TemporalType.DATE)
-    private Date appointmentTime;
-    @Basic(optional = false)
     @Column(name = "status")
     private String status;
     @JoinColumn(name = "carID", referencedColumnName = "id")
@@ -68,11 +62,9 @@ public class Appointment implements Serializable {
         this.id = id;
     }
 
-    public Appointment(Integer id, Date appointmentDate, Date appointmentTime, String status) {
+    public Appointment(Integer id, Date appointmentDate) {
         this.id = id;
         this.appointmentDate = appointmentDate;
-        this.appointmentTime = appointmentTime;
-        this.status = status;
     }
 
     public Integer getId() {
@@ -89,14 +81,6 @@ public class Appointment implements Serializable {
 
     public void setAppointmentDate(Date appointmentDate) {
         this.appointmentDate = appointmentDate;
-    }
-
-    public Date getAppointmentTime() {
-        return appointmentTime;
-    }
-
-    public void setAppointmentTime(Date appointmentTime) {
-        this.appointmentTime = appointmentTime;
     }
 
     public String getStatus() {

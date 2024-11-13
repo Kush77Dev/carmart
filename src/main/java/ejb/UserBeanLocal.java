@@ -4,10 +4,15 @@
  */
 package ejb;
 
+import entities.Appointment;
+import entities.CarOrder;
+import entities.OrderItems;
+import entities.Payment;
 import entities.Review;
 import entities.User;
 import jakarta.ejb.Local;
 import java.util.Collection;
+import java.util.Date;
 
 /**
  *
@@ -43,5 +48,73 @@ public interface UserBeanLocal {
     User getUserbyEmail(String email);
 
     Collection<User> getAllUsers();
+
+    // Appointment
+    void addAppointment(Integer userID, Integer dealerID, Integer carID, String status);
+
+    void updateAppointment(Integer id, Integer userID, Integer dealerID, Integer carID, String status);
+
+    void remmoveAppointment(Integer id, Integer userID, Integer dealerID, Integer carID);
+
+    Appointment getAppointmentbyId(Integer id);
+
+    Collection<Appointment> getAppoinetmentbyStatus(String status);
+
+    Collection<Appointment> getAppoinetmentbyUserId(Integer userID);
+
+    Collection<Appointment> getAppoinetmentbyDealerId(Integer dealerID);
+
+    Collection<Appointment> getAppoinetmentbyCarId(Integer carID);
+
+    // Payment
+    
+    void addPayment(Integer orderID, Integer paymentAmount, String paymentMethod);
+
+    void updatePayment(Integer id,Integer orderID, Integer paymentAmount, String paymentMethod);
+
+    void removePayment(Integer id,Integer orderID);
+    
+    Payment getPaymentById(Integer id);
+    
+    Collection<Payment> getPaymentByMethod(String paymentMethod);
+    
+    Collection<Payment> getAllPayments();
+
+    
+    // Order Item
+    
+     void addItem(Integer carId, Integer orderId);
+     
+     void updateItem(Integer item_id,Integer carId, Integer orderId);
+     
+     void removeItem(Integer item_id,Integer carId, Integer orderId);
+     
+     OrderItems getOrderItemById(Integer item_id);
+     
+     Collection<OrderItems> getItemByCarId(Integer carID);
+     
+     Collection<OrderItems> getItemByOrderId(Integer orderID);
+
+     
+     // Car Order Methods
+     
+     void addOrder(Integer carID,Integer userID,Integer itemID,String shippmentAddress,Integer shippingPrice,Integer totalPrice,Boolean isPaid,Boolean isDelivered,String delieverdAt);
+     
+     void updateOrder(Integer id,Integer carID,Integer userID,Integer itemID,String shippmentAddress,Integer shippingPrice,Integer totalPrice,Boolean isPaid,Boolean isDelivered,String delieverdAt);
+     
+     void removeOrder(Integer id,Integer carID,Integer userID,Integer itemID);
+     
+     CarOrder getCarOrderById(Integer id);
+     
+     Collection<CarOrder> getCarOrderByCarId(Integer carID);
+     
+     Collection<CarOrder> getCarOrderByUserId(Integer userID);
+     
+     Collection<CarOrder> getCarOrderByItemId(Integer itemID);
+     
+     Collection<CarOrder> getCarOrderByDate(Date orderDate);
+     
+     Collection<CarOrder> getAllCarorder();
+
 
 }
