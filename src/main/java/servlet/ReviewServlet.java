@@ -4,15 +4,14 @@
  */
 package servlet;
 
-import ejb.DealerBeanLocal;
-import ejb.adminLocal;
+import ejb.UserBean;
+import ejb.UserBeanLocal;
 import entities.Cars;
-import entities.Dealer;
+import entities.Review;
 import jakarta.ejb.EJB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,14 +21,10 @@ import java.util.Collection;
  *
  * @author Kush Khakhiwala
  */
-@WebServlet(name = "dealerServlet", urlPatterns = {"/dealerServlet"})
-public class dealerServlet extends HttpServlet {
+public class ReviewServlet extends HttpServlet {
 
     @EJB
-    adminLocal adminbean;
-    @EJB
-    DealerBeanLocal dbl;
-
+    UserBeanLocal ubl;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -47,48 +42,40 @@ public class dealerServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet dealerServlet</title>");
+            out.println("<title>Servlet ReviewServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet dealerServlet at " + request.getContextPath() + "</h1>");
             
-//            dbl.addCar("aa", "a.jpg", "aa", "aa", "aa", 10000, "aa", 15, "red", 123, 25, true);
+//            ubl.addReview(1, 7, 5, "Nice And Sexy Car");
+//              ubl.updateReview(2,1, 7, 5, "Sexy and good");
+//              ubl.removeReview(3, 1, 7);
 
-//            adminbean.addDealer("Hari", "Chinnar", "Rand", "Majura ni rand");
-//            adminbean.updateDealer(1, "Hari", "Chinnar", "Rand", "Majura ni rand");
-//            adminbean.removeDealer(1);
-            Collection<Dealer> deal = adminbean.getallDealers();
+            
+//            Review r = ubl.getReviewbyId(2);
+//            
+//            out.println("Rating:" + r.getRating());
+//            out.println("</br>");
+//            out.println("Comment:" + r.getComment());
+//            out.println("</br>");
 
-            for (Dealer d : deal) {
 
-//                out.println("<br/> Cust id :" + d.getId() + " Name : " + d.getName() + " " + d.getPhonenumber());
-                out.println("Name:" + d.getName());
+//            Collection<Review> reviewbycarid= ubl.getReviewbyCarId(7);
+//            for(Review r : reviewbycarid)
+//            {
+//                out.println("Rating:" + r.getRating());
+//                out.println("</br>");
+//                out.println("Comment:" + r.getComment());
+//                out.println("</br>");
+//            }
+            
+            Collection<Review> reviewbyuserid= ubl.getReviewbyUserId(1);
+            for(Review r : reviewbyuserid)
+            {
+                out.println("Rating:" + r.getRating());
                 out.println("</br>");
-                out.println("Address:" + d.getAdress());
-                out.println("</br>");
-                out.println("Phone Number:" + d.getPhonenumber());
-                out.println("</br>");
-                out.println("Email:" + d.getEmail());
+                out.println("Comment:" + r.getComment());
                 out.println("</br>");
             }
-
-            Collection<Cars> cars = dbl.getCarsByDealerId(25);
-            
-            out.println("Cars by id:");
-            for (Cars c : cars) {
-                out.println("car id:" + c.getId());
-                out.println("<br>");
-            }
-
-//            Dealer d = adminbean.getallDealersbyId(20);
-//            out.println("Name:" + d.getName());
-//            out.println("</br>");
-//            out.println("Address:" + d.getAdress());
-//            out.println("</br>");
-//            out.println("Phone Number:" + d.getPhonenumber());
-//            out.println("</br>");
-//            out.println("Email:" + d.getEmail());
-            out.println("</br>");
             out.println("</body>");
             out.println("</html>");
         }

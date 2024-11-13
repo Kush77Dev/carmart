@@ -46,7 +46,7 @@ public class admin implements adminLocal {
         d.setPhonenumber(phonenumber);
         d.setEmail(email);
 
-        em.persist(d);
+        em.merge(d);
 
     }
 

@@ -31,8 +31,7 @@ import java.util.Collection;
     @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
     @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password"),
     @NamedQuery(name = "User.findByAdress", query = "SELECT u FROM User u WHERE u.adress = :adress"),
-    @NamedQuery(name = "User.findByPhonenumber", query = "SELECT u FROM User u WHERE u.phonenumber = :phonenumber"),
-    @NamedQuery(name = "User.findByRoleId", query = "SELECT u FROM User u WHERE u.roleId = :roleId")})
+    @NamedQuery(name = "User.findByPhonenumber", query = "SELECT u FROM User u WHERE u.phonenumber = :phonenumber")})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -56,9 +55,6 @@ public class User implements Serializable {
     @Basic(optional = false)
     @Column(name = "phonenumber")
     private String phonenumber;
-    @Basic(optional = false)
-    @Column(name = "role_id")
-    private int roleId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userID")
     private Collection<Review> reviewCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userID")
@@ -73,14 +69,13 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public User(Integer id, String name, String email, String password, String adress, String phonenumber, int roleId) {
+    public User(Integer id, String name, String email, String password, String adress, String phonenumber) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.adress = adress;
         this.phonenumber = phonenumber;
-        this.roleId = roleId;
     }
 
     public Integer getId() {
@@ -129,14 +124,6 @@ public class User implements Serializable {
 
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
-    }
-
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
     }
 
     public Collection<Review> getReviewCollection() {

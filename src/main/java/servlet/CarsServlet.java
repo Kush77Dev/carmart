@@ -52,13 +52,13 @@ public class CarsServlet extends HttpServlet {
 //          dealerBean.addCar("seltos", "img.jpg", "KIA", "SUV", "nice", 1500000, "zxi", 12, "white", 125, 25, true);
 //          dealerBean.addCar("swift", "img", "suzuki", "hatchback", "nice", 5000, "zxi", 17, "red", 123, 25, true);
 //          dealerBean.updateCar(1, "Baleno", "img", "suzuki", "hatchback", "nice", 5000, "zxi", 17, "red", 123, 25, true);
-           dealerBean.removeCar(1);
+//           dealerBean.removeCar(4,25);
            
            
-            Cars c = dealerBean.getCarByName("seltos");
-
-            out.println("Name:" + c.getName());
-            out.println("</br>");
+//            Cars c = dealerBean.getCarByName("seltos");
+//
+//            out.println("Name:" + c.getName());
+//            out.println("</br>");
             
 //             Collection<Cars> car = dealerBean.getAllCars();
 //
@@ -66,6 +66,14 @@ public class CarsServlet extends HttpServlet {
 //                out.println("Name:" + c1.getName());
 //                out.println("</br>");
 //            }
+
+               Collection<Cars> car = dealerBean.searchCarByName("seltos");
+               for(Cars c: car)
+               {
+                    out.println("Name:" + c.getName());
+                    out.println("</br>");
+               }
+               
             out.println("</body>");
             out.println("</html>");
         }

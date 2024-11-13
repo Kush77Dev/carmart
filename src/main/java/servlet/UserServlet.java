@@ -4,10 +4,8 @@
  */
 package servlet;
 
-import ejb.DealerBeanLocal;
-import ejb.adminLocal;
-import entities.Cars;
-import entities.Dealer;
+import ejb.UserBeanLocal;
+import entities.User;
 import jakarta.ejb.EJB;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,13 +20,11 @@ import java.util.Collection;
  *
  * @author Kush Khakhiwala
  */
-@WebServlet(name = "dealerServlet", urlPatterns = {"/dealerServlet"})
-public class dealerServlet extends HttpServlet {
-
+@WebServlet(name = "UserServlet", urlPatterns = {"/UserServlet"})
+public class UserServlet extends HttpServlet {
+    
     @EJB
-    adminLocal adminbean;
-    @EJB
-    DealerBeanLocal dbl;
+    UserBeanLocal ubl;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -47,48 +43,66 @@ public class dealerServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet dealerServlet</title>");
+            out.println("<title>Servlet UserServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet dealerServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet UserServlet at " + request.getContextPath() + "</h1>");
             
-//            dbl.addCar("aa", "a.jpg", "aa", "aa", "aa", 10000, "aa", 15, "red", 123, 25, true);
+//            ubl.addUser("Hari", "Hari@gmail.com", "Hari1234", "Surat", "595926946");
+//              ubl.updateUser(1, "hello", "hari@gmail.com", "123456Hari", "surat", "987989998");
+//              ubl.removeUser(2);
 
-//            adminbean.addDealer("Hari", "Chinnar", "Rand", "Majura ni rand");
-//            adminbean.updateDealer(1, "Hari", "Chinnar", "Rand", "Majura ni rand");
-//            adminbean.removeDealer(1);
-            Collection<Dealer> deal = adminbean.getallDealers();
+//            User u = ubl.getUserbyId(1);
+//            out.println("Name:" + u.getName());
+//            out.println("</br>");
+//            out.println("Email:" + u.getEmail());
+//            out.println("</br>");
+//            out.println("Password:" + u.getPassword());
+//            out.println("</br>");
+//            out.println("Address:" + u.getAdress());
+//            out.println("</br>");
+//            out.println("Phone Number:" + u.getPhonenumber());
+//            out.println("</br>");
 
-            for (Dealer d : deal) {
+//            User u = ubl.getUserbyName("Hari");
+//            out.println("Name:" + u.getName());
+//            out.println("</br>");
+//            out.println("Email:" + u.getEmail());
+//            out.println("</br>");
+//            out.println("Password:" + u.getPassword());
+//            out.println("</br>");
+//            out.println("Address:" + u.getAdress());
+//            out.println("</br>");
+//            out.println("Phone Number:" + u.getPhonenumber());
+//            out.println("</br>");
+            
+            
+//            User u = ubl.getUserbyEmail("Hari@gmail.com");
+//            out.println("Name:" + u.getName());
+//            out.println("</br>");
+//            out.println("Email:" + u.getEmail());
+//            out.println("</br>");
+//            out.println("Password:" + u.getPassword());
+//            out.println("</br>");
+//            out.println("Address:" + u.getAdress());
+//            out.println("</br>");
+//            out.println("Phone Number:" + u.getPhonenumber());
+//            out.println("</br>");
 
-//                out.println("<br/> Cust id :" + d.getId() + " Name : " + d.getName() + " " + d.getPhonenumber());
-                out.println("Name:" + d.getName());
+            Collection<User> user = ubl.getAllUsers();
+            for(User u : user){
+                out.println("Name:" + u.getName());
                 out.println("</br>");
-                out.println("Address:" + d.getAdress());
+                out.println("Email:" + u.getEmail());
                 out.println("</br>");
-                out.println("Phone Number:" + d.getPhonenumber());
+                out.println("Password:" + u.getPassword());
                 out.println("</br>");
-                out.println("Email:" + d.getEmail());
+                out.println("Address:" + u.getAdress());
+                out.println("</br>");
+                out.println("Phone Number:" + u.getPhonenumber());
                 out.println("</br>");
             }
-
-            Collection<Cars> cars = dbl.getCarsByDealerId(25);
             
-            out.println("Cars by id:");
-            for (Cars c : cars) {
-                out.println("car id:" + c.getId());
-                out.println("<br>");
-            }
-
-//            Dealer d = adminbean.getallDealersbyId(20);
-//            out.println("Name:" + d.getName());
-//            out.println("</br>");
-//            out.println("Address:" + d.getAdress());
-//            out.println("</br>");
-//            out.println("Phone Number:" + d.getPhonenumber());
-//            out.println("</br>");
-//            out.println("Email:" + d.getEmail());
-            out.println("</br>");
             out.println("</body>");
             out.println("</html>");
         }

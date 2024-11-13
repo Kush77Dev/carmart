@@ -21,7 +21,7 @@ public interface DealerBeanLocal {
 
     void updateCar(Integer id, String name, String image, String brand, String category, String description, int price, String model, int mileage, String color, int vin, int dealerID, boolean inStock);
 
-    void removeCar(Integer id);
+    void removeCar(Integer id, Integer dealerId);
 
     Cars getCarById(Integer id);
 
@@ -44,5 +44,9 @@ public interface DealerBeanLocal {
     Collection<Cars> getAllCars();
 
     Cars getCarByInStock(boolean inStock);
+
+    Collection<Cars> getCarsByDealerId(Integer dealerId);
+    
+    Collection<Cars> searchCarByName(String name);
 
 }
