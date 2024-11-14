@@ -8,6 +8,18 @@
         <servlet-name>ReviewServlet</servlet-name>
         <servlet-class>servlet.ReviewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>appointmentServlet</servlet-name>
+        <servlet-class>servlet.appointmentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaymentServlet</servlet-name>
+        <servlet-class>servlet.PaymentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>orderServlet</servlet-name>
+        <servlet-class>servlet.orderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dealerServlet</servlet-name>
         <url-pattern>/dealerServlet</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>ReviewServlet</servlet-name>
         <url-pattern>/ReviewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>appointmentServlet</servlet-name>
+        <url-pattern>/appointmentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/PaymentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>orderServlet</servlet-name>
+        <url-pattern>/orderServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

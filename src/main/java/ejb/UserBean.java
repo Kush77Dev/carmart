@@ -16,6 +16,7 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 
@@ -213,8 +214,9 @@ public class UserBean implements UserBeanLocal {
         a.setUserID(u);
         a.setDealerID(d);
         a.setCarID(c);
-        a.setStatus(status);
         a.setAppointmentDate(new Date());
+        a.setStatus(status);
+
         em.persist(a);
 
         appointmentOfUser.add(a);
@@ -390,8 +392,9 @@ public class UserBean implements UserBeanLocal {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
         return em.createNamedQuery("Payment.findByPaymentMethod", Payment.class)
-                .setParameter("method", paymentMethod)
+                .setParameter("paymentMethod", paymentMethod)
                 .getResultList();
+        
     }
 
     @Override
@@ -417,10 +420,12 @@ public class UserBean implements UserBeanLocal {
         em.persist(item);
 
         itemsInCar.add(item);
-        em.merge(item);
+        car.setOrderItemsCollection(itemsInCar);
+        em.merge(car);
 
         itemsInOrder.add(item);
-        em.merge(item);
+        order.setOrderItemsCollection(itemsInOrder);
+        em.merge(order);
     }
 
     @Override
@@ -447,10 +452,10 @@ public class UserBean implements UserBeanLocal {
     }
 
     @Override
-    public void removeItem(Integer item_id, Integer carId, Integer orderId) {
+    public void removeItem(Integer item_id, Integer orderId, Integer carId) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
-        OrderItems orderItems = new OrderItems();
+        OrderItems orderItems = em.find(OrderItems.class, item_id);
 
         Cars car = em.find(Cars.class, carId);
         CarOrder order = em.find(CarOrder.class, orderId);
@@ -458,8 +463,8 @@ public class UserBean implements UserBeanLocal {
         Collection<OrderItems> itemsInCar = car.getOrderItemsCollection();
         Collection<OrderItems> itemsInOrder = order.getOrderItemsCollection();
 
-        itemsInCar.remove(car);
-        itemsInOrder.remove(order);
+        itemsInCar.remove(orderItems);
+        itemsInOrder.remove(orderItems);
 
         em.merge(car);
         em.merge(order);
@@ -521,12 +526,15 @@ public class UserBean implements UserBeanLocal {
         em.persist(co);
 
         orderOfCar.add(co);
+        c.setCarOrderCollection(orderOfCar);
         em.merge(c);
 
         orderOfUser.add(co);
+        u.setCarOrderCollection(orderOfUser);
         em.merge(u);
 
         orderOfItem.add(co);
+        oi.setCarOrderCollection(orderOfItem);
         em.merge(oi);
     }
 
@@ -539,9 +547,9 @@ public class UserBean implements UserBeanLocal {
         User u = em.find(User.class, userID);
 
         OrderItems oi = em.find(OrderItems.class, carID);
-        
+
         CarOrder co = em.find(CarOrder.class, id);
-        
+
         co.setCarID(c);
         co.setUserID(u);
         co.setItemID(oi);
@@ -553,7 +561,7 @@ public class UserBean implements UserBeanLocal {
         co.setPaidAt(new Date());
         co.setIsDelivered(isDelivered);
         co.setDeliveredAt(delieverdAt);
-        
+
         if (c != null) {
             co.setCarID(c); // Set the Dealer object
         }
@@ -561,52 +569,52 @@ public class UserBean implements UserBeanLocal {
         if (u != null) {
             co.setUserID(u); // Set the Dealer object
         }
-        
+
         if (oi != null) {
             co.setItemID(oi); // Set the Dealer object
         }
-        
+
         em.merge(co);
 
     }
 
     @Override
-    public void removeOrder(Integer id,Integer carID, Integer userID, Integer itemID) {
+    public void removeOrder(Integer id, Integer carID, Integer userID, Integer itemID) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
+
         CarOrder carOrder = em.find(CarOrder.class, id);
-        
+
         Cars c = em.find(Cars.class, carID);
         User u = em.find(User.class, userID);
         OrderItems oi = em.find(OrderItems.class, carID);
-        
+
         Collection<CarOrder> orderOfCar = c.getCarOrderCollection();
         Collection<CarOrder> orderOfUser = u.getCarOrderCollection();
         Collection<CarOrder> orderOfItems = oi.getCarOrderCollection();
-        
+
         orderOfCar.remove(carOrder);
         orderOfUser.remove(carOrder);
         orderOfItems.remove(carOrder);
-        
+
         em.merge(c);
         em.merge(u);
         em.merge(oi);
-        
+
         em.remove(carOrder);
-        
+
     }
 
     @Override
     public CarOrder getCarOrderById(Integer id) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
+
         return em.find(CarOrder.class, id);
     }
 
     @Override
     public Collection<CarOrder> getCarOrderByCarId(Integer carID) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
+
         Cars c = em.find(Cars.class, carID);
         return c.getCarOrderCollection();
     }
@@ -614,34 +622,34 @@ public class UserBean implements UserBeanLocal {
     @Override
     public Collection<CarOrder> getCarOrderByUserId(Integer userID) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
+
         User u = em.find(User.class, userID);
         return u.getCarOrderCollection();
-    
+
     }
 
     @Override
     public Collection<CarOrder> getCarOrderByItemId(Integer itemID) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
+
         OrderItems oi = em.find(OrderItems.class, itemID);
         return oi.getCarOrderCollection();
     }
 
-   @Override
+    @Override
     public Collection<CarOrder> getCarOrderByDate(Date orderDate) {
-    // Define the query to find CarOrder entities by a specific order date
-       TypedQuery<CarOrder> query = em.createNamedQuery("CarOrder.findByOrderDate", CarOrder.class);
-       query.setParameter("orderDate", orderDate);
-    
-    // Execute the query and return the list of matching CarOrders
-       return query.getResultList();
-}
+        // Define the query to find CarOrder entities by a specific order date
+        TypedQuery<CarOrder> query = em.createNamedQuery("CarOrder.findByOrderDate", CarOrder.class);
+        query.setParameter("orderDate", orderDate);
+
+        // Execute the query and return the list of matching CarOrders
+        return query.getResultList();
+    }
 
     @Override
     public Collection<CarOrder> getAllCarorder() {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
+
         Collection<CarOrder> carOrders = em.createNamedQuery("CarOrder.findAll").getResultList();
         return carOrders;
     }

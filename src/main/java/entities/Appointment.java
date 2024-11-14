@@ -43,6 +43,7 @@ public class Appointment implements Serializable {
     @Column(name = "appointmentDate")
     @Temporal(TemporalType.DATE)
     private Date appointmentDate;
+    @Basic(optional = false)
     @Column(name = "status")
     private String status;
     @JoinColumn(name = "carID", referencedColumnName = "id")
@@ -62,9 +63,10 @@ public class Appointment implements Serializable {
         this.id = id;
     }
 
-    public Appointment(Integer id, Date appointmentDate) {
+    public Appointment(Integer id, Date appointmentDate, String status) {
         this.id = id;
         this.appointmentDate = appointmentDate;
+        this.status = status;
     }
 
     public Integer getId() {

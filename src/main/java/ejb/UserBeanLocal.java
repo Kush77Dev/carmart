@@ -11,6 +11,7 @@ import entities.Payment;
 import entities.Review;
 import entities.User;
 import jakarta.ejb.Local;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 
@@ -87,7 +88,7 @@ public interface UserBeanLocal {
      
      void updateItem(Integer item_id,Integer carId, Integer orderId);
      
-     void removeItem(Integer item_id,Integer carId, Integer orderId);
+     void removeItem(Integer item_id,Integer orderId, Integer carId);
      
      OrderItems getOrderItemById(Integer item_id);
      
