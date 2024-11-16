@@ -4,6 +4,7 @@
  */
 package entities;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -221,6 +222,7 @@ public class Cars implements Serializable {
         this.dealerID = dealerID;
     }
 
+    @JsonbTransient
     public Collection<Review> getReviewCollection() {
         return reviewCollection;
     }
@@ -229,6 +231,7 @@ public class Cars implements Serializable {
         this.reviewCollection = reviewCollection;
     }
 
+    @JsonbTransient
     public Collection<Appointment> getAppointmentCollection() {
         return appointmentCollection;
     }
@@ -237,6 +240,7 @@ public class Cars implements Serializable {
         this.appointmentCollection = appointmentCollection;
     }
 
+    @JsonbTransient
     public Collection<Inventory> getInventoryCollection() {
         return inventoryCollection;
     }
@@ -245,6 +249,7 @@ public class Cars implements Serializable {
         this.inventoryCollection = inventoryCollection;
     }
 
+    @JsonbTransient
     public Collection<CarOrder> getCarOrderCollection() {
         return carOrderCollection;
     }
@@ -253,6 +258,7 @@ public class Cars implements Serializable {
         this.carOrderCollection = carOrderCollection;
     }
 
+    @JsonbTransient
     public Collection<OrderItems> getOrderItemsCollection() {
         return orderItemsCollection;
     }

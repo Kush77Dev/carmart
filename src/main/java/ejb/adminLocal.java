@@ -25,7 +25,7 @@ public interface adminLocal {
 
     Dealer getallDealersbyId(Integer id);
 
-    Dealer getallDealersbyName(String name);
+   Collection<Dealer> getallDealersbyName(String name);
 
     Dealer getallDealersbyaddress(String adress);
 

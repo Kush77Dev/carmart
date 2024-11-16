@@ -72,23 +72,23 @@ public class dealerServlet extends HttpServlet {
                 out.println("</br>");
             }
 
-            Collection<Cars> cars = dbl.getCarsByDealerId(25);
-            
-            out.println("Cars by id:");
-            for (Cars c : cars) {
-                out.println("car id:" + c.getId());
-                out.println("<br>");
-            }
-
-//            Dealer d = adminbean.getallDealersbyId(20);
-//            out.println("Name:" + d.getName());
+//            Collection<Cars> cars = dbl.getCarsByDealerId(25);
+//            
+//            out.println("Cars by id:");
+//            for (Cars c : cars) {
+//                out.println("car id:" + c.getId());
+//                out.println("<br>");
+//            }
+//
+////            Dealer d = adminbean.getallDealersbyId(20);
+////            out.println("Name:" + d.getName());
+////            out.println("</br>");
+////            out.println("Address:" + d.getAdress());
+////            out.println("</br>");
+////            out.println("Phone Number:" + d.getPhonenumber());
+////            out.println("</br>");
+////            out.println("Email:" + d.getEmail());
 //            out.println("</br>");
-//            out.println("Address:" + d.getAdress());
-//            out.println("</br>");
-//            out.println("Phone Number:" + d.getPhonenumber());
-//            out.println("</br>");
-//            out.println("Email:" + d.getEmail());
-            out.println("</br>");
             out.println("</body>");
             out.println("</html>");
         }

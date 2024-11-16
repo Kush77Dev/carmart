@@ -61,12 +61,15 @@ public class OrderItemServlet extends HttpServlet {
 //            out.println("</br>");
 
 
-//            Collection<OrderItems> itemses= ubl.getItemByCarId(4);
-//            for(OrderItems oi: itemses){
-//                out.println("Car:" + oi.getCarid()); // multiple collection 
-//                out.println("</br>");
-//
-//            }
+            Collection<OrderItems> itemses= ubl.getItemByCarId(4);
+            for(OrderItems oi: itemses){
+                out.println("ID:" + oi.getItemId()); // multiple collection 
+                out.println("</br>");
+                out.println("Car:" + oi.getCarid().getId()); // multiple collection 
+                out.println("</br>");
+                out.println("Order:" + oi.getOrderId().getId()); // multiple collection 
+                out.println("</br>");
+            }
             
 //            Collection<OrderItems> itemses= ubl.getItemByOrderId(3);
 //            for(OrderItems oi: itemses){

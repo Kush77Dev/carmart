@@ -171,21 +171,21 @@ public class UserBean implements UserBeanLocal {
     }
 
     @Override
-    public User getUserbyName(String name) {
+    public Collection<User> getUserbyName(String name) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
         return em.createNamedQuery("User.findByName", User.class)
                 .setParameter("name", name)
-                .getSingleResult();
+                .getResultList();
     }
 
     @Override
-    public User getUserbyEmail(String email) {
+    public Collection<User> getUserbyEmail(String email) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
         return em.createNamedQuery("User.findByEmail", User.class)
                 .setParameter("email", email)
-                .getSingleResult();
+                .getResultList();
     }
 
     @Override

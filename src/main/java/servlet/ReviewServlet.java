@@ -46,7 +46,7 @@ public class ReviewServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
-//            ubl.addReview(1, 7, 5, "Nice And Sexy Car");
+            ubl.addReview(2, 4, 5, "Nice And Sexy Car");
 //              ubl.updateReview(2,1, 7, 5, "Sexy and good");
 //              ubl.removeReview(3, 1, 7);
 

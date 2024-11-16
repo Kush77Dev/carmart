@@ -44,9 +44,9 @@ public interface UserBeanLocal {
 
     User getUserbyId(Integer id);
 
-    User getUserbyName(String name);
+    Collection<User> getUserbyName(String name);
 
-    User getUserbyEmail(String email);
+    Collection<User> getUserbyEmail(String email);
 
     Collection<User> getAllUsers();
 

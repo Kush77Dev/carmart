@@ -26,15 +26,15 @@ public interface DealerBeanLocal {
 
     Cars getCarById(Integer id);
 
-    Cars getCarByName(String name);
+    Collection<Cars> getCarByName(String name);
 
-    Cars getCarByBrand(String brand);
+    Collection<Cars> getCarByBrand(String brand);
 
-    Cars getCarByCategory(String category);
+    Collection<Cars> getCarByCategory(String category);
 
-    Cars getCarByColor(String color);
+    Collection<Cars> getCarByColor(String color);
 
-    Cars getCarByModel(String model);
+    Collection<Cars> getCarByModel(String model);
 
     Cars getCarByPrice(int price);
 

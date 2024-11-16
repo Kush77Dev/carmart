@@ -91,38 +91,38 @@ public class DealerBean implements DealerBeanLocal {
     }
 
     @Override
-    public Cars getCarByName(String name) {
+    public Collection<Cars> getCarByName(String name) {
         return em.createNamedQuery("Cars.findByName", Cars.class)
                 .setParameter("name", name)
-                .getSingleResult();
+                .getResultList();
     }
 
     @Override
-    public Cars getCarByBrand(String brand) {
+    public Collection<Cars> getCarByBrand(String brand) {
         return em.createNamedQuery("Cars.findByBrand", Cars.class)
                 .setParameter("brand", brand)
-                .getSingleResult();
+                .getResultList();
     }
 
     @Override
-    public Cars getCarByCategory(String category) {
+    public Collection<Cars> getCarByCategory(String category) {
         return em.createNamedQuery("Cars.findByCategory", Cars.class)
                 .setParameter("category", category)
-                .getSingleResult();
+                .getResultList();
     }
 
     @Override
-    public Cars getCarByColor(String color) {
+    public Collection<Cars> getCarByColor(String color) {
         return em.createNamedQuery("Cars.findByColor", Cars.class)
                 .setParameter("color", color)
-                .getSingleResult();
+                .getResultList();
     }
 
     @Override
-    public Cars getCarByModel(String model) {
+    public Collection<Cars> getCarByModel(String model) {
         return em.createNamedQuery("Cars.findByModel", Cars.class)
                 .setParameter("model", model)
-                .getSingleResult();
+                .getResultList();
     }
 
     @Override

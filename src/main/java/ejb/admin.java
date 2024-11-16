@@ -77,12 +77,16 @@ public class admin implements adminLocal {
     }
 
     @Override
-    public Dealer getallDealersbyName(String name) {
+    public Collection<Dealer> getallDealersbyName(String name) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
-        Dealer deal = (Dealer) em.createNamedQuery("Dealer.findByName")
-                .setParameter("name", name);
-        return deal;
+//        return em.createNamedQuery("User.findByName", User.class)
+//                .setParameter("name", name)
+//                .getResultList();
+
+            return em.createNamedQuery("Dealer.findByName", Dealer.class)
+                    .setParameter("name", name)
+                    .getResultList();
     }
 
     @Override
@@ -90,7 +94,8 @@ public class admin implements adminLocal {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 
         Dealer deal = (Dealer) em.createNamedQuery("Dealer.findByAdress")
-                .setParameter("adress", adress);
+                .setParameter("adress", adress)
+                .getSingleResult();
         return deal;
     }
 
@@ -99,7 +104,8 @@ public class admin implements adminLocal {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     
         Dealer deal = (Dealer) em.createNamedQuery("Dealer.findByPhonenumber")
-                .setParameter("phonenumber", phonenumber);
+                .setParameter("phonenumber", phonenumber)
+                .getSingleResult();
         return deal;
     }
 
@@ -108,7 +114,8 @@ public class admin implements adminLocal {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     
         Dealer deal = (Dealer) em.createNamedQuery("Dealer.findByEmail")
-                .setParameter("email", email);
+                .setParameter("email", email)
+                .getSingleResult();
         return deal;
     }
 
