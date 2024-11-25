@@ -5,7 +5,7 @@
 package ejb;
 
 import entities.Dealer;
-import javax.ejb.Local;
+import jakarta.ejb.Local;
 import java.util.Collection;
 
 /**

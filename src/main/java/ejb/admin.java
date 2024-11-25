@@ -6,9 +6,9 @@ package ejb;
 
 import entities.Dealer;
 import entities.Groupmaster;
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.ejb.Stateless;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.Collection;
 
 /**

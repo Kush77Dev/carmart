@@ -10,7 +10,7 @@ import entities.OrderItems;
 import entities.Payment;
 import entities.Review;
 import entities.User;
-import javax.ejb.Local;
+import jakarta.ejb.Local;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;

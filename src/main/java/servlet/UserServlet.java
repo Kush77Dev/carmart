@@ -6,14 +6,14 @@ package servlet;
 
 import ejb.UserBeanLocal;
 import entities.User;
-import javax.ejb.EJB;
+import jakarta.ejb.EJB;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.Collection;
 
 /**
@@ -50,7 +50,7 @@ public class UserServlet extends HttpServlet {
             
 //            ubl.addUser("Hari", "Hari@gmail.com", "Hari1234", "Surat", "595926946",2);
 //              ubl.updateUser(1, "hello", "hari@gmail.com", "123456Hari", "surat", "987989998");
-              ubl.removeUser(1,2);
+//              ubl.removeUser(1,2);
 
 //            User u = ubl.getUserbyId(1);
 //            out.println("Name:" + u.getName());

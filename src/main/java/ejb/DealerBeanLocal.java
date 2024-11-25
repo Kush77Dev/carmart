@@ -9,7 +9,7 @@ import entities.Cars;
 import entities.Dealer;
 import entities.Inventory;
 import entities.Review;
-import javax.ejb.Local;
+import jakarta.ejb.Local;
 import java.util.Collection;
 
 /**
