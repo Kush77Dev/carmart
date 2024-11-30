@@ -42,8 +42,8 @@ public class user {
         return resource.request(jakarta.ws.rs.core.MediaType.APPLICATION_JSON).get(responseType);
     }
 
-    public void removeUser(String id) throws ClientErrorException {
-        webTarget.path(java.text.MessageFormat.format("removeuser/{0}", new Object[]{id})).request().delete();
+    public void removeUser(String id, String groupMaster_id) throws ClientErrorException {
+        webTarget.path(java.text.MessageFormat.format("removeuser/{0}/{1}", new Object[]{id, groupMaster_id})).request().delete();
     }
 
     public <T> T getUserbyName(Class<T> responseType, String name) throws ClientErrorException {
@@ -52,8 +52,8 @@ public class user {
         return resource.request(jakarta.ws.rs.core.MediaType.APPLICATION_JSON).get(responseType);
     }
 
-    public void addUser(String name, String email, String password, String adress, String phonenumber) throws ClientErrorException {
-        webTarget.path(java.text.MessageFormat.format("adduser/{0}/{1}/{2}/{3}/{4}", new Object[]{name, email, password, adress, phonenumber})).request().post(null);
+    public void addUser(String name, String email, String password, String adress, String phonenumber, String groupMaster_id) throws ClientErrorException {
+        webTarget.path(java.text.MessageFormat.format("adduser/{0}/{1}/{2}/{3}/{4}/{5}", new Object[]{name, email, password, adress, phonenumber, groupMaster_id})).request().post(null);
     }
 
     public void updateUser(String id, String name, String email, String password, String adress, String phonenumber) throws ClientErrorException {

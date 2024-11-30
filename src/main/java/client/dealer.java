@@ -37,8 +37,8 @@ public class dealer {
         return resource.request(jakarta.ws.rs.core.MediaType.APPLICATION_JSON).get(responseType);
     }
 
-    public void addDealer(String name, String adress, String phonenumber, String email) throws ClientErrorException {
-        webTarget.path(java.text.MessageFormat.format("adddealer/{0}/{1}/{2}/{3}", new Object[]{name, adress, phonenumber, email})).request().post(null);
+    public void addDealer(String name, String adress, String phonenumber, String email, String groupMaster_id) throws ClientErrorException {
+        webTarget.path(java.text.MessageFormat.format("adddealer/{0}/{1}/{2}/{3}/{4}", new Object[]{name, adress, phonenumber, email, groupMaster_id})).request().post(null);
     }
 
     public void updateDealer(String id, String name, String adress, String phonenumber, String email) throws ClientErrorException {

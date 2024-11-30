@@ -4,6 +4,7 @@
  */
 package servlet;
 
+import client.user;
 import ejb.UserBeanLocal;
 import entities.User;
 import jakarta.ejb.EJB;
@@ -25,6 +26,8 @@ public class UserServlet extends HttpServlet {
     
     @EJB
     UserBeanLocal ubl;
+    
+    user u;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -47,6 +50,8 @@ public class UserServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet UserServlet at " + request.getContextPath() + "</h1>");
+            
+            u.addUser("pratik", "p", "p", "p", "123", "2");
             
 //            ubl.addUser("Hari", "Hari@gmail.com", "Hari1234", "Surat", "595926946",2);
 //              ubl.updateUser(1, "hello", "hari@gmail.com", "123456Hari", "surat", "987989998");

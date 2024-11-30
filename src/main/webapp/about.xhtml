@@ -1,0 +1,537 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Facelet Title</title>
+
+        <!--<h:graphicImage value="assets/images/favicon.ico" />-->
+
+
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+        <link rel="icon" href="assetsimages/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css"/>
+        <link href="assets/css/flaticon.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="assets/css/et-line-fonts.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/css/carspot-menu.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/css/animate.min.css" type="text/css"/>
+        <link href="assets/css/select2.min.css" rel="stylesheet" />
+        <link href="assets/css/nouislider.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.css"/>
+        <link href="assets/skins/minimal/minimal.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css" type="text/css" media="screen"/>
+        <link href="assets/css/responsive-media.css" rel="stylesheet"/>
+        <link rel="stylesheet" id="color" href="assets/css/colors/defualt.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CSource+Sans+Pro:400,400i,600" rel="stylesheet"/>
+
+
+
+
+
+        <!-- Flaticon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" 
+              integrity="sha512-6f7HT84a/AplPkpSRSKWqbseRTG4aRrhadjZezYQ0oVk/B+nm/US5KzQkyyOyh0Mn9cyDdChRdS9qaxJRHayww==" 
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+        <!-- External Resources -->
+        <link rel="stylesheet" 
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
+              integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" 
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Scripts -->
+        <link rel="stylesheet" href="assets/js/modernizr.js" />
+    </h:head>
+    <h:body>
+        <!-- Header -->
+        <div class="colored-header">
+        
+             <!-- Top Bar -->
+         <div class="header-top">
+            <div class="container">
+               <div class="row">
+                  <!-- Header Top Left -->
+                  <div class="header-top-left col-md-6 col-sm-6 col-xs-12 hidden-xs">
+                     <ul class="listnone">
+                        <li><a href="about.jsf"><i class="fa fa-heart-o" aria-hidden="true"></i> About</a></li>
+                        <li><a href="faqs.jsf"><i class="fa fa-folder-open-o" aria-hidden="true"></i> FAQS</a></li>
+                     
+                     </ul>
+                  </div>
+                  <!-- Header Top Right Social -->
+                  <div class="header-right col-md-6 col-sm-6 col-xs-12 ">
+                     <div class="pull-right">
+                        <ul class="listnone">
+                           <li><a href="login.jsf"><i class="fa fa-sign-in"></i> Log in</a></li>
+                           <li class="hidden-xs hidden-sm"><a href="register.jsf"><i class="fa fa-unlock" aria-hidden="true"></i> Register</a></li>
+                           <li class="dropdown">
+                               <a href="profile.jsf" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="img-circle resize" alt="" src="assets/images/users/3.jpg"/> <span class="myname hidden-xs"> Umair </span> </a>
+                           </li>
+                           <li>
+                              <a href="post-ad-1.html" class="btn btn-theme">Sell Your Car</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Top Bar End -->
+        
+         
+         <!-- menu start -->
+         <nav id="menu-1" class="mega-menu">
+            <!-- menu list items container -->
+            <section class="menu-list-items">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-12 col-md-12">
+                        <!-- menu logo -->
+                        <ul class="menu-logo">
+                           <li>
+                              <a href="home.jsf"><img src="assets/images/logo.png" alt="logo"/> </a>
+                           </li>
+                        </ul>
+                        <!-- menu links -->
+                        <ul class="menu-links">
+                           <!-- active class -->
+                           <li>
+                              <a href="home.jsf">Home</a>
+                           </li>
+                           <li>
+                              <a href="cars.jsf"> Cars </a>
+                              
+                           </li>
+                          
+                           <li>
+                              <a href="javascript:void(0)">Reviews</a>
+                             
+                           </li>
+                       
+                           <li>
+                               <a href="profile.jsf">User Profile</a>
+                              <!-- drop down multilevel  -->
+                              
+                           </li>
+                        </ul>
+                        <ul class="menu-search-bar">
+                           <li>
+                              <a>
+                                 <div class="contact-in-header clearfix">
+                                    <i class="flaticon-customer-service"></i>
+                                    <span>
+                                    Call Us Now
+                                    <br/>
+                                    <strong>111 222 333 444</strong>
+                                    </span>
+                                 </div>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </nav>
+         <!-- menu end -->
+    </div>
+
+        <div class="page-header-area-2 no-bottom gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 no-padding  col-md-12 col-sm-12 col-xs-12">
+                        <div class="small-breadcrumb">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                <div class=" breadcrumb-link">
+                                    <ul>
+                                        <li><a href="home.jsf">Cars</a></li>
+                                        <li><a class="active" href="#">Ad Details</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content-area clearfix">
+            <!-- About CarSpot -->
+            <section class="custom-padding about-us">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="title">
+                                <h3>About <span class="heading-color">Car Spot</span> Dealership</h3>
+                            </div>
+                            <div class="content">
+                                <h:outputText value="Everything you need to build an amazing dealership automotive responsive website" styleClass="service-summary" />
+                                <p>
+                                    <h:outputText value="Carspot is not only a hub where buyers and sellers can interact, it is also a comprehensive automotive portal with a forum dedicated to all automotive discussions, a blog that keeps the users up to date with the latest happenings in the automotive industry." />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <h:graphicImage url="assets/images/gtr.png" alt="Car Image" styleClass="wow slideInRight center-block img-responsive" />
+                        </div>
+                    </div>
+                    <div class="row margin-top-20">
+                        <!-- Services Grid -->
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="services-grid">
+                                <div class="icons"><i class="flaticon-key"></i></div>
+                                <h4>Dealership</h4>
+                                <p>We have the right caring, experience and dedicated professional for you.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="services-grid">
+                                <div class="icons"><i class="flaticon-engine-2"></i></div>
+                                <h4>Engine Upgrades</h4>
+                                <p>We have the right caring, experience and dedicated professional for you.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="services-grid">
+                                <div class="icons"><i class="flaticon-security"></i></div>
+                                <h4>Security Inspections</h4>
+                                <p>We have the right caring, experience and dedicated professional for you.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                            <div class="services-grid">
+                                <div class="icons"><i class="flaticon-disc-brake-1"></i></div>
+                                <h4>Break Checkup</h4>
+                                <p>We have the right caring, experience and dedicated professional for you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding parallex bg-img-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="owl-testimonial-2">
+                            <div class="single_testimonial">
+                                <div class="textimonial-content">
+                                    <h4>Just fabulous</h4>
+                                    <h:outputText value="Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim veniam quis notru." />
+                                </div>
+                                <div class="testimonial-meta-box">
+                                    <h:graphicImage url="images/users/1.jpg" alt="" />
+                                    <div class="testimonial-meta">
+                                        <h3 class="">Jhon Emily Copper</h3>
+                                        <p>Developer</p>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single_testimonial">
+                                <div class="textimonial-content">
+                                    <h4>Awesome ! Loving It</h4>
+                                    <h:outputText value="Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim veniam quis notru." />
+                                </div>
+                                <div class="testimonial-meta-box">
+                                    <h:graphicImage url="images/users/2.jpg" alt="" />
+                                    <div class="testimonial-meta">
+                                        <h3 class="">Hania Sheikh</h3>
+                                        <p>CEO Pvt. Inc.</p>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single_testimonial">
+                                <div class="textimonial-content">
+                                    <h4>Very quick and Fast</h4>
+                                    <h:outputText value="Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim veniam quis notru." />
+                                </div>
+                                <div class="testimonial-meta-box">
+                                    <h:graphicImage url="images/users/3.jpg" alt="" />
+                                    <div class="testimonial-meta">
+                                        <h3 class="">Jaccica Albana</h3>
+                                        <p>CTO Albana Inc.</p>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single_testimonial">
+                                <div class="textimonial-content">
+                                    <h4>Done in 3 Months! Awesome</h4>
+                                    <h:outputText value="Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim veniam quis notru." />
+                                </div>
+                                <div class="testimonial-meta-box">
+                                    <h:graphicImage url="images/users/4.jpg" alt="" />
+                                    <div class="testimonial-meta">
+                                        <h3 class="">Humayun Sarfraz</h3>
+                                        <p>CTO Glixen Technologies</p>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single_testimonial">
+                                <div class="textimonial-content">
+                                    <h4>Find It Quite Professional</h4>
+                                    <h:outputText value="Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim veniam quis notru." />
+                                </div>
+                                <div class="testimonial-meta-box">
+                                    <h:graphicImage url="images/users/4.jpg" alt="" />
+                                    <div class="testimonial-meta">
+                                        <h3 class="">Massica O'Brain</h3>
+                                        <p>Audit Officer</p>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="funfacts custom-padding parallex">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="number">
+                                <span class="timer" data-from="0" data-to="1238" data-speed="1500" data-refresh-interval="5">
+                                    <h:outputText value="0" />
+                                </span>+
+                            </div>
+                            <h4>Total <span>Cars</span></h4>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="number">
+                                <span class="timer" data-from="0" data-to="820" data-speed="1500" data-refresh-interval="5">
+                                    <h:outputText value="0" />
+                                </span>+
+                            </div>
+                            <h4>Hose For <span>Sale</span></h4>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="number">
+                                <span class="timer" data-from="0" data-to="1042" data-speed="1500" data-refresh-interval="5">
+                                    <h:outputText value="0" />
+                                </span>+
+                            </div>
+                            <h4>Active <span>Users</span></h4>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="number">
+                                <span class="timer" data-from="0" data-to="34" data-speed="1500" data-refresh-interval="5">
+                                    <h:outputText value="0" />
+                                </span>+
+                            </div>
+                            <h4>Featured <span>Jobs</span></h4>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+
+
+            <div class="happy-clients-area">
+                <div class="container">
+                    <div class="row clients-space">
+                        <div class="col-md-12 col-xs-12 col-sm-12">
+                            <div class="client-brand-list">
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/1.png" alt="" />
+                                    </h:link>
+                                </div>
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/2.png" alt="" />
+                                    </h:link>
+                                </div>
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/3.png" alt="" />
+                                    </h:link>
+                                </div>
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/4.png" alt="" />
+                                    </h:link>
+                                </div>
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/5.png" alt="" />
+                                    </h:link>
+                                </div>
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/6.png" alt="" />
+                                    </h:link>
+                                </div>
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/7.png" alt="" />
+                                    </h:link>
+                                </div>
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/8.png" alt="" />
+                                    </h:link>
+                                </div>
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/9.png" alt="" />
+                                    </h:link>
+                                </div>
+                                <div class="sigle-clients-brand">
+                                    <h:link outcome="#" styleClass="">
+                                        <h:graphicImage value="images/brands/11.png" alt="" />
+                                    </h:link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer-bg">
+                <!-- Footer Content -->
+                <div class="footer-top">
+                   <div class="container">
+                      <div class="row">
+                         <div class="col-md-3  col-sm-6 col-xs-12">
+                            <!-- Info Widget -->
+                            <div class="widget">
+                               <div class="logo"> <img alt="" src="assets/images/logo.png"/> </div>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor eget erat fringilla port.</p>
+                               <ul class="apps-donwloads">
+                                  <li><img src="assets/images/googleplay.png" alt=""/></li>
+                                  <li><img src="assets/images/appstore.png" alt=""/></li>
+                               </ul>
+                            </div>
+                            <!-- Info Widget Exit -->
+                         </div>
+
+                    <!-- Follow Us -->
+
+                     <div class="col-md-2 col-sm-6 col-xs-12">
+                            <!-- Follow Us -->
+                            <div class="widget socail-icons">
+                               <h5>Follow Us</h5>
+                            <ul>
+                                <li>
+                                    <h:outputLink value="#" styleClass="Facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </h:outputLink>
+                                    <span>Facebook</span>
+                                </li>
+                                <li>
+                                    <h:outputLink value="#" styleClass="Twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </h:outputLink>
+                                    <span>Twitter</span>
+                                </li>
+                                <li>
+                                    <h:outputLink value="#" styleClass="Linkedin">
+                                        <i class="fa fa-linkedin"></i>
+                                    </h:outputLink>
+                                    <span>Linkedin</span>
+                                </li>
+                                <li>
+                                    <h:outputLink value="#" styleClass="Google">
+                                        <i class="fa fa-google-plus"></i>
+                                    </h:outputLink>
+                                    <span>Google+</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-2  col-sm-6 col-xs-12">
+                        <div class="widget my-quicklinks">
+                               <h5>Quick Links</h5>
+                            <ul>
+                                <li><h:outputLink value="#">About Us</h:outputLink></li>
+                                <li><h:outputLink value="#">Faqs</h:outputLink></li>
+                                <li><h:outputLink value="#">Packages</h:outputLink></li>
+                                <li><h:outputLink value="#">Contact Us</h:outputLink></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Newslatter -->
+                        <div class="col-md-5  col-sm-6 col-xs-12">
+                            <div class="widget widget-newsletter">
+                               <h5>Singup for Weekly Newsletter</h5>
+                            <div class="fieldset">
+                                <p>We may send you information about related events, webinars, products and services which we believe.</p>
+
+                                <h:form>
+                                    <input class="" value="Enter your email address" type="text"/>
+                                     <input class="submit-btn" name="submit" value="Submit" type="submit"/> 
+                                </h:form>
+                            </div>
+                        </div>
+                        <div class="copyright">
+                            <p>© 2017 Carspot All rights reserved. Design by <b>CartMart</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <!-- =-=-=-=-=-=-= FOOTER END =-=-=-=-=-=-= -->
+        
+        
+        
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/bootstrap.min.js"></script>
+      <script src="assets/js/easing.js"></script>
+      <script src="assets/js/carspot-menu.js"></script>
+      <script src="assets/js/jquery.appear.min.js"></script>
+      <script src="assets/js/jquery.countTo.js"></script>
+      <script src="assets/js/select2.min.js"></script>
+      <script src="assets/js/nouislider.all.min.js"></script>
+      <script src="assets/js/carousel.min.js"></script>
+      <script src="assets/js/slide.js"></script>
+      <script src="assets/js/imagesloaded.js"></script>
+      <script src="assets/js/isotope.min.js"></script>
+      <script src="assets/js/icheck.min.js"></script>
+      <script src="assets/js/jquery-migrate.min.js"></script>
+
+      <script src="assets/js/color-switcher.js"></script>
+      <script src="assets/js/jquery.fancybox.min.js"></script>
+      <script src="assets/js/wow.js"></script>
+      <script src="assets/js/custom.js"></script>
+            
+    </h:body>
+</html>

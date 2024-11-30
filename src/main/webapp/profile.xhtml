@@ -1,0 +1,605 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+        <link rel="icon" href="assetsimages/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css"/>
+        <link href="assets/css/flaticon.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="assets/css/et-line-fonts.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/css/carspot-menu.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/css/animate.min.css" type="text/css"/>
+        <link href="assets/css/select2.min.css" rel="stylesheet" />
+        <link href="assets/css/nouislider.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.css"/>
+        <link href="assets/skins/minimal/minimal.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css" type="text/css" media="screen"/>
+        <link href="assets/css/responsive-media.css" rel="stylesheet"/>
+        <link rel="stylesheet" id="color" href="assets/css/colors/defualt.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CSource+Sans+Pro:400,400i,600" rel="stylesheet"/>
+
+
+
+
+        <!-- Flaticon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" 
+              integrity="sha512-6f7HT84a/AplPkpSRSKWqbseRTG4aRrhadjZezYQ0oVk/B+nm/US5KzQkyyOyh0Mn9cyDdChRdS9qaxJRHayww==" 
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+        <!-- External Resources -->
+        <link rel="stylesheet" 
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
+              integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" 
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Scripts -->
+        <link rel="stylesheet" href="assets/js/modernizr.js" />
+
+
+    </h:head>
+    <h:body>
+<!-- Header -->
+        <div class="colored-header">
+        
+             <!-- Top Bar -->
+         <div class="header-top">
+            <div class="container">
+               <div class="row">
+                  <!-- Header Top Left -->
+                  <div class="header-top-left col-md-6 col-sm-6 col-xs-12 hidden-xs">
+                     <ul class="listnone">
+                        <li><a href="about.jsf"><i class="fa fa-heart-o" aria-hidden="true"></i> About</a></li>
+                        <li><a href="faqs.jsf"><i class="fa fa-folder-open-o" aria-hidden="true"></i> FAQS</a></li>
+                     
+                     </ul>
+                  </div>
+                  <!-- Header Top Right Social -->
+                  <div class="header-right col-md-6 col-sm-6 col-xs-12 ">
+                     <div class="pull-right">
+                        <ul class="listnone">
+                           <li><a href="login.jsf"><i class="fa fa-sign-in"></i> Log in</a></li>
+                           <li class="hidden-xs hidden-sm"><a href="register.jsf"><i class="fa fa-unlock" aria-hidden="true"></i> Register</a></li>
+                           <li class="dropdown">
+                               <a href="profile.jsf" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="img-circle resize" alt="" src="assets/images/users/3.jpg"/> <span class="myname hidden-xs"> Umair </span> </a>
+                           </li>
+                           <li>
+                              <a href="post-ad-1.html" class="btn btn-theme">Sell Your Car</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Top Bar End -->
+        
+         
+         <!-- menu start -->
+         <nav id="menu-1" class="mega-menu">
+            <!-- menu list items container -->
+            <section class="menu-list-items">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-12 col-md-12">
+                        <!-- menu logo -->
+                        <ul class="menu-logo">
+                           <li>
+                              <a href="home.jsf"><img src="assets/images/logo.png" alt="logo"/> </a>
+                           </li>
+                        </ul>
+                        <!-- menu links -->
+                        <ul class="menu-links">
+                           <!-- active class -->
+                           <li>
+                              <a href="home.jsf">Home</a>
+                           </li>
+                           <li>
+                              <a href="cars.jsf"> Cars </a>
+                              
+                           </li>
+                          
+                           <li>
+                              <a href="javascript:void(0)">Reviews</a>
+                             
+                           </li>
+                       
+                           <li>
+                               <a href="profile.jsf">User Profile</a>
+                              <!-- drop down multilevel  -->
+                              
+                           </li>
+                        </ul>
+                        <ul class="menu-search-bar">
+                           <li>
+                              <a>
+                                 <div class="contact-in-header clearfix">
+                                    <i class="flaticon-customer-service"></i>
+                                    <span>
+                                    Call Us Now
+                                    <br/>
+                                    <strong>111 222 333 444</strong>
+                                    </span>
+                                 </div>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </nav>
+         <!-- menu end -->
+    </div>
+        <!-- =-=-=-=-=-=-= Breadcrumb =-=-=-=-=-=-= -->
+        <div class="page-header-area-2 gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="small-breadcrumb">
+                            <div class="breadcrumb-link">
+                                <ul>
+                                    <li>
+                                        <h:link value="Home Page" outcome="newjsf_h.xhtml" />
+                                    </li>
+                                    <li>
+                                        <a class="active" value="#">
+                                            Profile
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header-page">
+                                <h1>User Dashboard</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =-=-=-=-=-=-= Breadcrumb End =-=-=-=-=-=-= -->
+
+
+
+        <!-- Main Content Area -->
+        <div >
+            <div name="content">
+                <div class="main-content-area clearfix">
+                    <!--Latest Ads Section--> 
+                    <h:form> 
+                        <section class="section-padding no-top gray">
+                            <div class="container">
+                                <div class="row">
+                                    <!--Middle Content Area--> 
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div layout="block" class="search-result-item">
+                                            <a class="image-link" outcome="#">
+                                                <img src="assets/images/users/9.jpg" class="image center-block" />
+                                            </a>
+                                            <div class="search-result-item-body">
+                                                <div class="row">
+                                                    <div class="col-md-5 col-sm-12 col-xs-12">
+                                                        <h4 class="search-result-item-heading">
+                                                            <a value="Umair" outcome="#"/>
+                                                        </h4>
+                                                        <p class="info">
+                                                            <a value="Profile" outcome="profile.xhtml" class="fa fa-user"/>
+                                                            <span>Profile</span>
+                                                            <a value="Edit Profile" outcome="#" class="fa fa-edit"/>
+                                                            <span>Edit Profile</span>
+                                                        </p>
+                                                        <p class="description">
+                                                            You last logged in at: 14-01-2017 6:40 AM [USA time (GMT + 6:00hrs)]
+                                                        </p>
+                                                        <span class="label label-warning">Paid Package</span>
+                                                        <span class="label label-success">Dealer</span>
+                                                    </div>
+                                                    <div class="col-md-7 col-sm-12 col-xs-12">
+                                                        <div class="row ad-history">
+                                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="user-stats">
+                                                                    <h2>374</h2>
+                                                                    <small>Ad Sold</small>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="user-stats">
+                                                                    <h2>980</h2>
+                                                                    <small>Total Listings</small>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="user-stats">
+                                                                    <h2>413</h2>
+                                                                    <small>Favourites Ads</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Dashboard Menu--> 
+                                        <div class="dashboard-menu-container">
+                                            <ul>
+                                                <li class="active">
+                                                    <a href="profile.html">
+                                                        <div class="menu-name"> Profile </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="archives.html">
+                                                        <div class="menu-name">Archives</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="active-ads.html">
+                                                        <div class="menu-name">My Ads</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="favourite.html">
+                                                        <div class="menu-name">Favourites Ads</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="messages.html">
+                                                        <div class="menu-name">Messages</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="menu-name">Close Account</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="menu-name">Logout</div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row End -->
+                                <div class="row margin-top-40">
+                                    <!-- Middle Content Area -->
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <!-- Row -->
+                                        <div class="profile-section margin-bottom-20">
+                                            <div class="profile-tabs">
+                                                <ul class="nav nav-justified nav-tabs">
+                                                    <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+                                                    <li><a href="#edit" data-toggle="tab">Edit Profile</a></li>
+                                                    <li><a href="#payment" data-toggle="tab">Plan Setting</a></li>
+                                                    <li><a href="#settings" data-toggle="tab">Notification Settings</a></li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="profile-edit tab-pane fade in active" id="profile">
+                                                        <h2 class="heading-md">Manage your Name, ID and Email Addresses.</h2>
+                                                        <p>Below are the name and email addresses on file for your account.</p>
+                                                        <dl class="dl-horizontal">
+                                                            <dt><strong>Your name </strong></dt>
+                                                            <dd>
+                                                                John Doe
+                                                            </dd>
+                                                            <dt><strong>Email Address </strong></dt>
+                                                            <dd>
+                                                                contact@scriptsbundle.com
+                                                            </dd>
+                                                            <dt><strong>Phone Number </strong></dt>
+                                                            <dd>
+                                                                (0423) 12-2345-789
+                                                            </dd>
+                                                            <dt><strong>Country </strong></dt>
+                                                            <dd>
+                                                                England
+                                                            </dd>
+                                                            <dt><strong>City </strong></dt>
+                                                            <dd>
+                                                                London
+                                                            </dd>
+                                                            <dt><strong>You are a </strong></dt>
+                                                            <dd>
+                                                                Dealer
+                                                            </dd>
+                                                            <dt><strong>Address </strong></dt>
+                                                            <dd>
+                                                                Lahore, PK
+                                                            </dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="profile-edit tab-pane fade" id="edit">
+                                                        <h2 class="heading-md">Manage your Security Settings</h2>
+                                                        <p>Manage Your Account</p>
+                                                        <div class="clearfix"></div>
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <label>Your Name </label>
+                                                                    <input type="text" class="form-control margin-bottom-20"/>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <label>Email Address <span class="color-red">*</span></label>
+                                                                    <input type="text" class="form-control margin-bottom-20"/>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-xs-12">  
+                                                                    <label>Contact Number <span class="color-red">*</span></label>
+                                                                    <input type="text" class="form-control margin-bottom-20"/>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-12 col-xs-12 margin-bottom-20">
+                                                                    <label>Country <span class="color-red">*</span></label>
+                                                                    <select class="form-control">
+                                                                        <option value="0">SriLanka</option>
+                                                                        <option value="1">Australia</option>
+                                                                        <option value="2">Bahrain</option>
+                                                                        <option value="3">Canada</option>
+                                                                        <option value="4">Denmark</option>
+                                                                        <option value="5">Germany</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-12 col-xs-12 margin-bottom-20">
+                                                                    <label>City <span class="color-red">*</span></label>
+                                                                    <select class="form-control">
+                                                                        <option value="0">London</option>
+                                                                        <option value="1">Edinburgh</option>
+                                                                        <option value="2">Wales</option>
+                                                                        <option value="3">Cardiff</option>
+                                                                        <option value="4">Bradford</option>
+                                                                        <option value="5">Cambridge</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                    <label>Address <span class="color-red">*</span></label>
+                                                                    <textarea class = "form-control margin-bottom-20" rows = "3"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row margin-bottom-20">
+                                                                <div class="form-group">
+                                                                    <div class="col-md-9">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn">
+                                                                                <span class="btn btn-default btn-file">
+                                                                                    Browse… <input type="file" id="imgInp"/>
+                                                                                </span>
+                                                                            </span>
+                                                                            <input type="text" class="form-control" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <img id="img-upload" class="img-responsive" src="assets/images/users/2.jpg" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <div class="row">
+                                                                <div class="col-md-8 col-sm-8 col-xs-12">
+                                                                    <div class="form-group">
+                                                                        <div class="skin-minimal">
+                                                                            <ul class="list">
+                                                                                <li>
+                                                                                    <input  type="checkbox" id="minimal-checkbox-7"/>
+                                                                                    <label for="minimal-checkbox-7">i agree <a href="#">Terms of Services</a></label>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-4 col-xs-12 text-right">
+                                                                    <button type="submit" class="btn btn-theme btn-sm">Update My Info</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="profile-edit tab-pane fade" id="payment">
+                                                        <h2 class="heading-md">Manage your Package Settings</h2>
+                                                        <p>Below are the payment options for your account.</p>
+                                                        <br/>
+                                                        <form action="#" id="sky-form" class="sky-form" >
+                                                            <!--Checkout-Form-->
+                                                            <dl class="dl-horizontal">
+                                                                <dt><strong>Current Plan</strong></dt>
+                                                                <dd>
+                                                                    Premium
+                                                                </dd>
+                                                                <dt><strong>Expiration Date </strong></dt>
+                                                                <dd>
+                                                                    2nd January 2017
+                                                                </dd>
+                                                            </dl>
+                                                            <div class="row">
+                                                                <div class="col-sm-12 col-md-6 margin-bottom-20">
+                                                                    <label>Select Plan You Want To Change<span class="color-red">*</span></label>
+                                                                    <select class="form-control">
+                                                                        <option value="0">Free</option>
+                                                                        <option value="1">Premium</option>
+                                                                        <option value="2">Advanced</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-sm btn-default" type="button">Cancel</button>
+                                                            <button type="submit" class="btn btn-sm btn-theme">Save Changes</button>
+                                                            <!--End Checkout-Form-->
+                                                        </form>
+                                                    </div>
+                                                    <div class="profile-edit tab-pane fade" id="settings">
+                                                        <h2 class="heading-md">Manage your Notifications.</h2>
+                                                        <p>Below are the notifications you may manage.</p>
+                                                        <br/>
+                                                        <form>
+                                                            <div class="skin-minimal">
+                                                                <ul class="list">
+                                                                    <li>
+                                                                        <input  type="checkbox" id="minimal-checkbox-1"/>
+                                                                        <label for="minimal-checkbox-1">Send me email notification when Ad is processed</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input  type="checkbox" id="minimal-checkbox-2"/>
+                                                                        <label for="minimal-checkbox-2">Send me email notification when user comment</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input  type="checkbox" id="minimal-checkbox-3"/>
+                                                                        <label for="minimal-checkbox-3">Send me email notification for the latest update</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input  type="checkbox" id="minimal-checkbox-4"/>
+                                                                        <label for="minimal-checkbox-4"> Receive our monthly newsletter</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input  type="checkbox" id="minimal-checkbox-5"/>
+                                                                        <label for="minimal-checkbox-5">Email notification</label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="button-group margin-top-20">
+                                                                <button class="btn btn-sm btn-default" type="button">Reset</button>
+                                                                <button type="submit" class="btn btn-sm btn-theme">Save Changes</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Row End -->
+                                    </div>
+                                    <!-- Middle Content Area  End -->
+                                </div>
+
+                            </div>
+                        </section>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area End --> 
+
+
+
+
+        <!-- =-=-=-=-=-=-= FOOTER =-=-=-=-=-=-= -->
+        <footer class="footer-bg">
+            <!-- Footer Content -->
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3  col-sm-6 col-xs-12">
+                            <!-- Info Widget -->
+                            <div class="widget">
+                                <div class="logo"> <img alt="" src="assets/images/logo.png"/> </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor eget erat fringilla port.</p>
+                                <ul class="apps-donwloads">
+                                    <li><img src="assets/images/googleplay.png" alt=""/></li>
+                                    <li><img src="assets/images/appstore.png" alt=""/></li>
+                                </ul>
+                            </div>
+                            <!-- Info Widget Exit -->
+                        </div>
+
+                        <!-- Follow Us -->
+
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <!-- Follow Us -->
+                            <div class="widget socail-icons">
+                                <h5>Follow Us</h5>
+                                <ul>
+                                    <li>
+                                        <h:outputLink value="#" styleClass="Facebook">
+                                            <i class="fa fa-facebook"></i>
+                                        </h:outputLink>
+                                        <span>Facebook</span>
+                                    </li>
+                                    <li>
+                                        <h:outputLink value="#" styleClass="Twitter">
+                                            <i class="fa fa-twitter"></i>
+                                        </h:outputLink>
+                                        <span>Twitter</span>
+                                    </li>
+                                    <li>
+                                        <h:outputLink value="#" styleClass="Linkedin">
+                                            <i class="fa fa-linkedin"></i>
+                                        </h:outputLink>
+                                        <span>Linkedin</span>
+                                    </li>
+                                    <li>
+                                        <h:outputLink value="#" styleClass="Google">
+                                            <i class="fa fa-google-plus"></i>
+                                        </h:outputLink>
+                                        <span>Google+</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="col-md-2  col-sm-6 col-xs-12">
+                            <div class="widget my-quicklinks">
+                                <h5>Quick Links</h5>
+                                <ul>
+                                    <li><h:outputLink value="#">About Us</h:outputLink></li>
+                                    <li><h:outputLink value="#">Faqs</h:outputLink></li>
+                                    <li><h:outputLink value="#">Packages</h:outputLink></li>
+                                    <li><h:outputLink value="#">Contact Us</h:outputLink></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Newslatter -->
+                        <div class="col-md-5  col-sm-6 col-xs-12">
+                            <div class="widget widget-newsletter">
+                                <h5>Singup for Weekly Newsletter</h5>
+                                <div class="fieldset">
+                                    <p>We may send you information about related events, webinars, products and services which we believe.</p>
+
+                                    <h:form>
+                                        <input class="" value="Enter your email address" type="text"/>
+                                        <input class="submit-btn" name="submit" value="Submit" type="submit"/> 
+                                    </h:form>
+                                </div>
+                            </div>
+                            <div class="copyright">
+                                <p>© 2017 Carspot All rights reserved. Design by <b>CartMart</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- =-=-=-=-=-=-= FOOTER END =-=-=-=-=-=-= -->
+
+
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/easing.js"></script>
+        <script src="assets/js/carspot-menu.js"></script>
+        <script src="assets/js/jquery.appear.min.js"></script>
+        <script src="assets/js/jquery.countTo.js"></script>
+        <script src="assets/js/select2.min.js"></script>
+        <script src="assets/js/nouislider.all.min.js"></script>
+        <script src="assets/js/carousel.min.js"></script>
+        <script src="assets/js/slide.js"></script>
+        <script src="assets/js/imagesloaded.js"></script>
+        <script src="assets/js/isotope.min.js"></script>
+        <script src="assets/js/icheck.min.js"></script>
+        <script src="assets/js/jquery-migrate.min.js"></script>
+
+        <script src="assets/js/color-switcher.js"></script>
+        <script src="assets/js/jquery.fancybox.min.js"></script>
+        <script src="assets/js/wow.js"></script>
+        <script src="assets/js/custom.js"></script>
+
+    </h:body>
+</html>
